@@ -19,9 +19,10 @@ const callISSPositionScript = function()
 {
     failurePositionID = setTimeout(startISSPositionScript, 70000);
     let script = document.createElement("script");
-    script.src = "http://api.open-notify.org/iss-now.json?callback=ISSPositionScriptCallback";
+    script.src = "https://href.li/?http://api.open-notify.org/iss-now.json?callback=ISSPositionScriptCallback";
+    //script.setAttribute("src", "https://goo.gl/Eolvvz");
     document.head.appendChild(script);
-    document.head.removeChild(script);
+    //document.head.removeChild(script);
 }
 const ISSPositionScriptCallback = function(data)
 {
@@ -32,6 +33,7 @@ const ISSPositionScriptCallback = function(data)
         obj.setLng(parseFloat(data.iss_position['longitude']));
         displayISSPosition(obj);
         if(map) addMarker("iss", obj);
+        console.log(convertDate(new Date(data['timestamp']*1000)));
     } else {
         console.log(data);
     }
