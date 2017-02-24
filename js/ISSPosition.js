@@ -19,8 +19,8 @@ const callISSPositionScript = function()
 {
     failurePositionID = setTimeout(startISSPositionScript, 70000);
     let script = document.createElement("script");
-    script.src = "https://href.li/?http://api.open-notify.org/iss-now.json?callback=ISSPositionScriptCallback";
-    //script.setAttribute("src", "https://goo.gl/Eolvvz");
+    //script.src = "https://href.li/?http://api.open-notify.org/iss-now.json?callback=ISSPositionScriptCallback";
+    script.setAttribute("src", "https://goo.gl/Eolvvz");
     document.head.appendChild(script);
     //document.head.removeChild(script);
 }
